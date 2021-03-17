@@ -1,0 +1,24 @@
+{
+  "name": "e-commerce_back_end",
+  "version": "1.0.0",
+  "description": "e-commerce back end using express.js, and sequelize interacting with a mysql database",
+  "main": "Develop/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmgleason/E-Commerce_Back_End.git"
+  },
+  "keywords": [
+    "express.js",
+    "sequelize",
+    "mysql"
+  ],
+  "author": "Wanda Gleason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmgleason/E-Commerce_Back_End/issues"
+  },
+  "homepage": "https://github.com/wmgleason/E-Commerce_Back_End#readme"
+}
