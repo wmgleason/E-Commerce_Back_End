@@ -16,7 +16,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new category
 });
-// CREATE a card
+// CREATE a category
 router.post('/', async (req, res) => {
   try {
     const locationData = await Category.create({
