@@ -1,8 +1,8 @@
+//build router with Express.js
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
-// The `/api/categories` endpoint
-
+//Find all categories
 router.get('/', async (req, res) => {
   // find all categories
   // be sure to include its associated Products
@@ -33,7 +33,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
 // CREATE a category
 router.post('/', async (req, res) => {
   try {
