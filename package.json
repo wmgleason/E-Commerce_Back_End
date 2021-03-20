@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/wmgleason/E-Commerce_Back_End#readme",
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
