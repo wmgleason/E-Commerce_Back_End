@@ -7,10 +7,10 @@ router.get('/', async (req, res) => {
   // find all categories
   // be sure to include its associated Products
   try {
-    const CategoryData = await Category.findAll({
+    const categoryData = await Category.findAll({
       include: [{ model: Product }],
     });
-    res.status(200).json(CategoryData);
+    res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -20,50 +20,47 @@ router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try {
-    const CategoryData = await Category.findByPk(req.params.id, {
+    const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product }],
     });
-    if (!CategoryData) {
+    if (!categoryData) {
       res.status(404).json({ message: 'No category found with that id!' });
       return;
     }
-    res.status(200).json(CategoryData);
+    res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// CREATE a category
+// CREATE a category - use post
 router.post('/', async (req, res) => {
   try {
-    const locationData = await Category.create({
-      category_name: req.body.category_name,
-    });
-    res.status(200).json(locationData);
+    const categoryData = await Category.create(req.body);
+    res.status(200).json(categoryData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
-  try {
-    const CategoryData = await Category.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-
-    if (!CategoryData) {
-      res.status(404).json({ message: 'No category found with that id!' });
-      return;
-    }
-
-    res.status(200).json(CategoryData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.put('/:id', async (req, res) => {
+//   // update a category by its `id` value
+//   try {
+//     const categoryData = await Category.update(req.body {
+//       where: {
+//         id: req.params.id,
+//       },
+//       individualHooks: true
+//     });
+//     if (!categoryData[0]) {
+//       res.status(404).json({ message: 'Update failed - no category found with that id!' });
+//       return;
+//     }
+//     res.status(200).json(categoryData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // This action method is the Controller. It accepts input and sends data to the Model and the View.
 router.put('/:id', async (req, res) => {
@@ -79,7 +76,7 @@ router.put('/:id', async (req, res) => {
       },
     });
     // If the database is updated successfully, what happens to the updated data below?
-    // The updated data (dish) is then sent back to handler that dispatched the fetch request.
+    // The updated data is then sent back to handler that dispatched the request.
     res.status(200).json(category);
   } catch (err) {
       res.status(500).json(err);
