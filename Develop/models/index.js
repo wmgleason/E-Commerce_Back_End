@@ -35,10 +35,6 @@ Tag.belongsToMany(Product, {
 
 
 
-LibraryCard.belongsTo(Reader, {
-  foreignKey: 'reader_id',
-});
-
 
 
 
