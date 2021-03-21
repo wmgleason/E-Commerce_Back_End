@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // create new product
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -132,7 +132,7 @@ router.put('/:id', async (req, res) => {
 //   // delete one product by its `id` value
 // });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const productData = await Product.destroy({
       where: {
