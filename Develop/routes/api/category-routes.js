@@ -1,6 +1,7 @@
 //build router with Express.js
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { Category } = require('../../models/Category');
+const { Product } = require('../../models/Product');
 
 //Find all categories
 router.get('/', async (req, res) => {
