@@ -16,27 +16,16 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
   through: "ProductTag",
-  as: "tags",
-  foreignKey: "tag_id",
+  // as: "tags",
+  foreignKey: "product_id",
 });
 
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
   through: "ProductTag",
-  as: "tags",
+  // as: "tags",
   foreignKey: "tag_id",
 });
-
-
-// Reader.hasOne(LibraryCard, {
-//   foreignKey: 'reader_id',
-//   onDelete: 'CASCADE',
-// });
-
-
-
-
-
 
 module.exports = {
   Product,
