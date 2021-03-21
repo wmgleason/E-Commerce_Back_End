@@ -17,7 +17,7 @@ ProductTag.init(
     type: DataTypes.INTEGER,
     references: {
       // This is a reference to another model
-      model: 'Product',
+      model: 'product',
       // This is the column name of the referenced model
       key: 'id',
       }
@@ -26,7 +26,7 @@ ProductTag.init(
       type: DataTypes.INTEGER,
       references: {
         // This is a reference to another model
-        model: 'Tag',
+        model: 'tag',
         // This is the column name of the referenced model
         key: 'id',
       },
@@ -37,7 +37,7 @@ ProductTag.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ProductTag',
+    modelName: 'product_tag',
   }
 );
 
