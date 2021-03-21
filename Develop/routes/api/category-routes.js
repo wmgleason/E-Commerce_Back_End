@@ -65,8 +65,7 @@ router.post('/', async (req, res) => {
 // This action method is the Controller. It accepts input and sends data to the Model and the View.
 router.put('/:id', async (req, res) => {
   // It is sending the data to the Model so that one category can be updated with new data in the database.
-  try {
-    const category = await Category.update(
+    const updatedCategory = await Category.update(
     {
       category_name: req.body.category_name
     },
@@ -74,14 +73,23 @@ router.put('/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-    });
+    }
+    );
+  
+    res.json(updatedCategory);
+  });
+  // Delete route for a category with a matching id
+router.delete('/:id', async (req, res) => {
     // If the database is updated successfully, what happens to the updated data below?
     // The updated data is then sent back to handler that dispatched the request.
-    res.status(200).json(category);
-  } catch (err) {
-      res.status(500).json(err);
-    };
-});
+    const deletedCategory = await Category.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    
+    res.json(deletedCategory);
+  });
 
 
 module.exports = router;
