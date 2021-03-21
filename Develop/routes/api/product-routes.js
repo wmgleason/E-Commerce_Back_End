@@ -68,11 +68,9 @@ router.post('/', async (req, res) => {
       res.status(200).json(product);
     })
     .then((productTagIds) => res.status(200).json(productTagIds))
-    .catch((err) => {
-      console.log(err);
+    .catch((err) => console.error('Promise rejected:', err));
       res.status(400).json(err);
-    });
-});
+;
 
 // update product
 router.put('/:id', async (req, res) => {
