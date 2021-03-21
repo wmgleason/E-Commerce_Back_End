@@ -52,8 +52,11 @@ router.post('/', withAuth, async (req, res) => {
   */
  try {
    const newProduct = await Product.create({
-     ..req.body,
-     user_id: req.session.user_id,
+     product_name: req.body.productname,
+     price: req.body.price,
+     stock: req.body.stock,
+     id: req.session.id,
+     category: req.body.category_id
    });
 
    res.status(200).json(newProduct);
