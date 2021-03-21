@@ -38,10 +38,10 @@ Product.init(
       type: DataTypes.INTEGER,
       references: {
         // This is a reference to another model
-        model: 'category',
+        model: 'Category',
         // This is the column name of the referenced model
         key: 'id',
-    },
+    }
   },
   },
   {
