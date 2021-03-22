@@ -13,19 +13,13 @@ router.get('/', (req, res) => {
     }
   ]
 })
-.then(categoryData => {
-    if (!categoryData) {
-        res.status(404).json({ message: 'No categories found' });
-        return;
-    }
-    res.json(categoryData);
-})
-.then(dbCategoryData => res.json(dbCategoryData))
+.then(categoryData => res.json(categoryData))
 .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
+  console.log(err);
+  res.status(500).json(err);
 });
 });
+
 // .catch(err => {
 //     console.log(err);
 //     res.status(500).json(err)
@@ -177,7 +171,7 @@ router.post('/', (req, res) => {
                 res.status(404).json({ message: 'No category was deleted. No category found by that id.' });
                 return;
             }
-            res.json(dbCategoryData);
+            res.json(categoryData);
         })
         .catch(err => {
             console.log(err);
