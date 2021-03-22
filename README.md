@@ -35,4 +35,4 @@
   oglissane@gmail.com
 
 
-  Link to gif of the app in use: ![app gif](Employee_Tracker.gif?raw=true)
+  Link to gif of the app in use: ![app gif](npm_run_seed_and_node_server.js.gif?raw=true)
